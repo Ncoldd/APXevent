@@ -1,41 +1,44 @@
 .event-card {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 0.5rem; /* 8px > 0.5rem convert */
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;  /* full width of grid column */
 }
 
 .event-image {
   width: 100%;
-  height: 200px;
+  height: auto; /*200px > auto */
   object-fit: cover;
 }
 
 .event-info {
-  padding: 20px;
+  padding: 1.25rem;             /* 20px > 1.25rem */
 }
 
 .event-title {
-  font-size: 20px;
-  margin-bottom: 12px;
+  font-size: 1.25rem;          /* 20px > 1.25rem */
+  margin-bottom: 0.75rem;       /* 12px > 0.75rem */
   color: #2c3e50;
 }
 
 .event-date,
 .event-venue {
-  font-size: 14px;
+  font-size: 0.875rem;          /* 14px > 0.875rem */
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;        /* 8px > 0.5rem */
 }
 
 .view-button {
   display: inline-block;
-  margin-top: 12px;
-  padding: 10px 20px;
+  margin-top: 0.75rem;          /* 12px > 0.75rem */
+  padding: 0.625rem 1.25rem;    /* 10px 20px > 0.625rem 1.25rem */
   background-color: #3498db;
   color: white;
   text-decoration: none;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 0.25rem;       /* 4px > 0.25rem */
+  font-size: 0.875rem;          /* 14px > 0.875rem */
   font-weight: 600;
+  text-align: center; 
+  width: 100%;  /* full width of card */
 }

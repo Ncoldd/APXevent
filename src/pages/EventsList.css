@@ -1,62 +1,104 @@
 .events-page {
-  padding: 40px;
-  max-width: 1400px;
+  padding: 2.5rem;  /* 40px > 2.5rem convert */
+  max-width: 87.5rem; /* 1400px > 87.5rem convert */
   margin: 0 auto;
 }
 
 .loading {
   text-align: center;
-  padding: 100px 0;
-  font-size: 24px;
+  padding: 6.25rem 0; /* 100px > 6.25rem convert */
+  font-size: 1.5rem;  /* 24px > 1.5rem convert */
   color: #666;
 }
 
 .page-header {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem; /* 40px > 2.5rem convert */
 }
 
 .page-header h1 {
-  font-size: 42px;
-  color: #2c3e50;
-  margin-bottom: 10px;
+  font-size: 2.625rem;   /* 42px > 2.625rem convert */
+  color: #2c3e50;        /* leave */
+  margin-bottom: 0.625rem; /* 10px > 0.625rem convert */
 }
 
 .page-header p {
-  font-size: 18px;
+  font-size: 1.125rem;   /* 18px > 1.125rem convert */
   color: #666;
 }
 
 .events-container {
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  /*gap: 2.5rem;           /* 40px > 2.5rem convert */
 }
 
+/* on 1024px(desktop layout) --- puts sidebar and events-grid side by side */
+@media (min-width: 1024px) {
+  .events-container {
+    flex-direction: row;
+    gap: 2.5rem;  
+    /* 40px > 2.5rem convert --- sidebar/events-grid spacer */
+  }
+}
+
+/* mobile default */
 .sidebar {
-  width: 280px;
+  width: 100%; /* 280px > 100% convert */
   flex-shrink: 0;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 100%;  /* 280px → 17.5rem */
+  }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 17.5rem;  /* same as tablet to keep layout consistet */
+  }
+}
+
+.events-grid {
+  display: grid; /*grid for consistent columns over flex*/
+  grid-template-columns: 1fr; /* 3 columns on desktop */
+  /* made media queries for make 1 column on mobile */
+  gap: 1.875rem;         /* 30px > 1.875rem convert */
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr); /* strict2 columns */
+  }
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .events-grid {
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr))
+    /* cards max width 17rem (~272px), grow if space available */
+  }
 }
 
 .filter-section {
   background-color: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.25rem;      /* was already in rem */
+  border-radius: 0.5rem; /* 8px > 0.5rem convert */
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.1); 
+  /* 2px > 0.125rem, 8px > 0.5rem convert */
 }
 
 .filter-section h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #2c3e50;
+  font-size: 1.22rem;    /* no convert */
+  margin-bottom: 0.9375rem; /* 15px > 0.9375rem convert */
+  color: #2c3e50;        
 }
 
 .filter-note {
-  font-size: 14px;
-  color: #999;
+  font-size: 0.875rem;   /* 14px > 0.875rem convert */
+  color: #999;          
 }
 
-.events-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
